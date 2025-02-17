@@ -1,0 +1,333 @@
+.data_content{
+    /*overflow-x: hidden;*/
+    min-width: 1366px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.data_content .data_info{
+    width: calc(100% - 40px);
+    margin-bottom: 40px;
+    height: 110px;
+    margin-left: 20px;
+}
+.data_content .data_info .info_1{
+    width: 40%;
+    height: 110px;
+}
+.data_content .data_info .info_1>.text_1{
+    width: calc(100% - 25px);
+    background-color: #034c6a;
+    height: 110px;
+}
+
+.data_content .data_info .info_2{
+    width: 31%;
+    height: 110px;
+}
+.data_content .data_info .info_2>.text_2{
+    width: calc(100% - 25px);
+    background-color: #034c6a;
+    height: 110px;
+}
+
+.data_content .data_info .info_3{
+    width: 29%;
+    height: 110px;
+}
+.data_content .data_info .info_3>.text_3{
+    width:100%;
+    background-color: #034c6a;
+    height: 110px;
+
+}
+
+.data_content .data_info>div.info_1>.text_1>div{
+    width: 33.333%;
+    position: relative;
+}
+.data_content .data_info>div.info_2>div>div,
+.data_content .data_info>div.info_3>div>div{
+    width: 50%;
+    position: relative;
+}
+.data_content .data_info img{
+    position: absolute;
+    top: 35px;
+    left: 15px;
+}
+.data_content .data_info>div>div>div>div{
+    margin-left:65px;
+    margin-top: 23px;
+}
+.data_content .data_info>div.info_2>div>div>div{
+    margin-left: 70px;
+    margin-top: 23px;
+}
+.data_content .data_info p:nth-child(1){
+    color:#fff;
+    font-size: 12.8px;
+}
+.data_content .data_info p:nth-child(2){
+    font-weight: 600;
+    font-size: 28px;
+    color:#ffff43;
+}
+.data_content .data_info>div.info_2 p:nth-child(2){
+    font-weight: 600;
+    font-size: 28px;
+    color:#25f3e6;
+}
+.data_content .data_info>div.info_3 p:nth-child(2){
+    font-weight: 600;
+    font-size: 28px;
+    color:#ff4e4e;
+}
+
+.data_content .data_main{
+    width: calc(100% - 40px);
+    margin-bottom: 40px;
+    height: 615px;
+    margin-left: 20px;
+}
+
+.l_t_line{
+    width: 5px;
+    height: 24px;
+    left: -3px;
+    top: -3px;
+}
+.t_l_line{
+    height: 5px;
+    width: 26px;
+    left: -3px;
+    top: -3px;
+}
+.t_line_box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.t_line_box i{
+    background-color: #4788fb;
+    box-shadow: 0px 0px 10px #4788fb;
+    position: absolute;
+}
+.t_r_line{
+    height: 5px;
+    width: 26px;
+    right: -3px;
+    top: -3px;
+}
+.r_t_line{
+    width: 5px;
+    height: 24px;
+    right: -3px;
+    top: -3px;
+}
+.l_b_line{
+    width: 5px;
+    height: 24px;
+    left: -3px;
+    bottom: -3px;
+}
+.b_l_line{
+    height: 5px;
+    width: 26px;
+    left: -3px;
+    bottom: -3px;
+}
+.r_b_line{
+    width: 5px;
+    height: 24px;
+    right: -3px;
+    bottom: -3px;
+}
+.b_r_line{
+    height: 5px;
+    width: 26px;
+    right: -3px;
+    bottom: -3px;
+}
+
+
+
+.data_content .data_bottom{
+    width: 100%;
+    height: 280px;
+    margin-left: 20px;
+}
+
+.data_content .data_bottom div{
+
+}
+.data_content .data_bottom .bottom_1{
+    width: 24%;
+    height: 280px;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    box-shadow: 0 0 10px #2C58A6;
+}
+.data_content .data_bottom .bottom_center{
+    width: 96%;
+    height: 280px;
+}
+.data_content .data_bottom .bottom_2{
+    /*width: calc(50% - 35px);*/
+    width: 100% !important;
+    height: 280px;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    margin-left: 25px;
+    box-shadow: 0 0 10px #2C58A6;
+}
+.data_content .data_bottom .bottom_3{
+    width: 70% !important;
+    height: 280px;
+    position: relative;
+    margin-top: 50px !important;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    margin-left:25px;
+    box-shadow: 0 0 10px #2C58A6;
+}
+.data_content .data_bottom .bottom_4{
+    width: 24%;
+    height: 280px;
+    margin-top: 50px !important;
+    margin-right: 30px !important;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    box-shadow: 0 0 10px #2C58A6;
+}
+.data_content .data_bottom div .main_title{
+    width: 220px;
+    z-index: 99999;
+    height: 35px;
+    line-height: 33px;
+    background-color: #2C58A6;
+    border-radius: 18px;
+    position: absolute;
+    top: -17px;
+    left:50%;
+    margin-left: -110px;
+    color:#fff;
+    font-size: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding-left: 45px;
+}
+.main_title1{
+    width: 320px;
+    height: 35px;
+    line-height: 33px;
+    background-color: #2C58A6;
+    border-radius: 18px;
+    position: absolute;
+    top: -17px;
+    left:50%;
+    margin-left: -150px;
+    color:#fff;
+    font-size: 18px;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding-left: 45px;
+}
+.data_content .data_bottom div .main_title img{
+    position: absolute;
+    top: 8px;
+    left: 20px;
+}
+
+.data_content .data_bottom div .main_table tr{
+    height: 42px;
+}
+.data_content .data_bottom div .main_table{
+    width: 100%;
+    margin-top: 25px;
+}
+
+.data_content .data_bottom div .main_table table{
+    width: 100%;
+}
+.data_content .data_bottom div .main_table thead tr{
+    height: 42px;
+}
+.data_content .data_bottom div .main_table th{
+    font-size: 12px;
+    font-weight: 600;
+    color:#61d2f7;
+    text-align: center;
+}
+.data_content .data_bottom div .main_table th:nth-child(1){
+
+}
+.data_content .data_bottom div .main_table th:nth-child(2){
+
+}
+.data_content .data_bottom div .main_table td{
+    color:#fff;
+    font-size: 10px;
+    text-align: center;
+}
+/*奇数的 都要阴影*/
+/*.data_content .data_bottom div .main_table tbody tr:nth-child(1),*/
+/*.data_content .data_bottom div .main_table tbody tr:nth-child(3),*/
+/*.data_content .data_bottom div .main_table tbody tr:nth-child(7),*/
+/*.data_content .data_bottom div .main_table tbody tr:nth-child(9),*/
+.data_content .data_bottom div .main_table tbody tr:nth-child(odd){
+    background-color: #072951;
+    box-shadow:-10px 0px 15px #2C58A6 inset,   /*左边阴影*/
+    10px 0px 15px #2C58A6 inset;  /*右边阴影*/
+}
+.t_btn8,.t_btn2,.t_btn3{
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+}
+
+
+
+.scrollbar{
+
+    width:30px;
+
+    height:300px;
+
+    margin:0 auto;
+
+
+
+}
+
+::-webkit-scrollbar {/*滚动条整体样式*/
+
+    width:10px;    /*高宽分别对应横竖滚动条的尺寸*/
+
+    height:1px;
+
+}
+
+::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+    border-radius:10px;
+
+    -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.2);
+
+    background:#072951;
+
+}
+
+::-webkit-scrollbar-track {/*滚动条里面轨道*/
+
+    -webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.2);
+
+    border-radius:10px;
+
+    background:#2C58A6;
+
+}

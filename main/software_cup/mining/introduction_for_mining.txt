@@ -1,0 +1,6 @@
+接口说明：
+get_suspected_user_id :
+参 数： K ， 取值为[1,320]
+功 能： 返回test数据集（new_test_dangan.csv文件）中前K个疑似挖矿用户的id（1700001-1722217）
+返回数据类型： list
+提 醒：请先把两个Result_dangan.csv 新文件放在对应目录下

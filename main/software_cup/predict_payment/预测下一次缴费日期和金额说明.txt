@@ -1,0 +1,16 @@
+1. 新文件 new_test_cost_month_second.csv 放到 data/test/new_test_cost_month_second.csv下
+   文件 predict_payment_date.py 放到 software_cup 根目录下
+   模型 payment_date_model.m 放到 model/payment_date_model.m下
+   模型 payment_cost_model.m 放到 model/payment_cost_model.m下
+
+2. 外部接口：
+  （1）predict_payment_date：
+      功能： 输入用户id，返回用户最后一个月的缴费日期。
+      注意： 是采用用户最后一个月的数据作为label进行训练得到的模型，所以实则是对最后一次缴费日期进行预测，但是其实最后一次缴费日期已经存在真值。
+      输入： 用户id, str
+      输出： 最后一个月的缴费日期, str
+  （2）predict_payment_cost：
+      功能： 输入用户id，返回用户最后一个月的缴费金额。
+      注意： 是采用用户最后一个月的数据作为label进行训练得到的模型，所以实则是对最后一次缴费金额进行预测，但是其实最后一次缴费金额已经存在真值。
+      输入： 用户id, str
+      输出： 最后一个月的缴费金额, int

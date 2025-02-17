@@ -1,0 +1,52 @@
+@charset "UTF-8";
+.m-padded-tb-min{
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+.m-padded-tb-max{
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+.m-padded-tb-large{
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+.m-size{
+    height: 2em !important;
+    width: 20em !important;
+}
+.m-all{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.m-padded-menu{
+	position : absolute;
+	height:auto;
+}
+/*-------------font--------------*/
+.m-font-space{
+    letter-spacing: 1px !important;
+}
+.m-font-thin{
+    font-weight: 300 !important;
+}
+.m-font-lined{
+    line-height: 2 !important;
+}
+.m-opacity-mini{
+    opacity: 0.8 !important;
+}
+
+
+.column1{
+	width:15%;
+	height:100vh;
+}
+.column2{
+	width:85%;
+	height:100vh;
+}
+
+

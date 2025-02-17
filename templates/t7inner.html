@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>inner</title>
+  <link href="../static/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/new1.css">
+  <script src="../static/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    {% comment %}alert美化{% endcomment %}
+    <link rel="stylesheet" type="text/css" href="https://blog.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="https://blog.huangwx.cn/js/sweetalert-dev.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
+
+
+
+  <style>
+    .t_title{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 2.5em;
+      line-height: 80px;
+      color: #fff;
+    }
+    .middle_top {
+      width: 100%;
+      height: 100%;
+    }
+    .middle_top_list {
+      float: left;
+      width: 50%;
+      height: 35%;
+      margin-top: 15.5%;
+      text-align: center;
+      color: #4ADEFE;
+    }
+    .loading {
+            margin: auto;
+            margin-top: 10px;
+            display: block;
+            width: 100px;
+            height: 100px;
+             background: #0c2034;
+            /*border: 1px solid black;*/
+        }
+
+            .loading .pic {
+                display: block;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                box-shadow: 0 2px 0 #666;
+                animation: loop 1s infinite;
+                -webkit-animation: loop 1s infinite;
+            }
+
+        @keyframes loop {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg );
+            }
+        }
+    .middle_top_list span {
+      color: #F3DB5C;
+    }
+    .list_title {
+      font-size: 18px;
+      margin-top: -15%;
+    }
+    .list_num {
+      margin-top: 3%;
+      font-size: 16px;
+    }
+    .list_num span {
+      font-size: 30px;
+    }
+    .middle_top_list:nth-of-type(2) {
+      border-left: 1px solid #4E72B0;
+    {#border-right: 1px solid #4E72B0;#}
+    }
+
+
+    .bootstrap-table .fixed-table-container .table thead th .both {
+      background-image: none
+    }
+    .bootstrap-table .fixed-table-container.fixed-height .table thead th {
+      border-bottom: none;
+    }
+    .bootstrap-table .fixed-table-container.fixed-height:not(.has-footer) {
+      border-bottom:none;
+    }
+    .form-control {
+      color: #212529;
+      background-color: #0c1e31;
+      border: 1px solid #4165a2;
+    }
+    .btn-secondary {
+      color: #fff;
+      background-color: transparent;
+      border-color: transparent;
+      right: 3px;
+    }
+    .app-serach-box {
+      position: relative;
+      max-width: 600px;
+      margin: 3vh auto 20px;
+    }
+    .se-input-box{
+      box-shadow: 0 0 10px 3px #00000029;
+      position: relative;
+      z-index: 1;
+      backdrop-filter: blur(14px);
+      overflow: hidden;
+      display: flex;
+      border-radius: 25px;
+      height: 48px;
+      background-color: rgba(255, 255, 255, 0.7);
+      align-items: center;
+      transition: .2s;
+      color: #222;
+    }
+    .se-input-box .se-select{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-width: 50px;
+      max-width: 50px;
+      transition: .2s;
+    }
+    .icon{
+      vertical-align: middle;
+    }
+
+    .app-serach-box .se-input-box .se-input{
+      color: #222;
+      background-color: transparent;
+      font-size: 14px;
+      height: 100%;
+      width: 100%;
+      line-height: 20px;
+      padding: 8px 50px;
+    }
+
+  </style>
+</head>
+<body onload="func1()">
+  <div class="data_content">
+
+    <div class="data_main" >
+      <div class="data_bottom">
+        <div class="bottom_center fl">
+
+          <div class="bottom_1 fl" style="height:80%;width:45%;top:53px;left: 1%">
+            <!--左上边框-->
+            <div class="t_line_box">
+              <i class="t_l_line"></i>
+              <i class="l_t_line"></i>
+            </div>
+            <!--右上边框-->
+            <div class="t_line_box">
+              <i class="t_r_line"></i>
+              <i class="r_t_line"></i>
+            </div>
+            <!--左下边框-->
+            <div class="t_line_box">
+              <i class="l_b_line"></i>
+              <i class="b_l_line"></i>
+            </div>
+            <!--右下边框-->
+            <div class="t_line_box">
+              <i class="r_b_line"></i>
+              <i class="b_r_line"></i>
+            </div>
+            <div class="main_title">
+             近100天 日用电量
+            </div>
+ <p style="color:white;padding-top: 50px;padding-left: 40px;font-size: medium">本图为该用户近100天的日用电量折线图，显示了该用户的日用电趋势。</p>
+ <p id="loading" class="loading" style="display: none">
+                    <span class="pic"></span>
+                </p>
+            <div id="chart_date" class="echart t_btn7" style="width:100%;height: 100%;">
+            </div>
+
+          </div>
+
+          <div class="bottom_4 f1" style="height:80%;width:45%;top:2px;right:1%">
+            <!--左上边框-->
+            <div class="t_line_box">
+              <i class="t_l_line"></i>
+              <i class="l_t_line"></i>
+            </div>
+            <!--右上边框-->
+            <div class="t_line_box">
+              <i class="t_r_line"></i>
+              <i class="r_t_line"></i>
+            </div>
+            <!--左下边框-->
+            <div class="t_line_box">
+              <i class="l_b_line"></i>
+              <i class="b_l_line"></i>
+            </div>
+            <!--右下边框-->
+            <div class="t_line_box">
+              <i class="r_b_line"></i>
+              <i class="b_r_line"></i>
+            </div>
+            <div class="main_title">
+              近18月 月用电量
+            </div>
+ <p style="color:white;padding-top: 50px;padding-left: 40px;font-size: medium">本图为该用户近18个月的月用电量折线图，显示了该用户的月用电趋势。</p>
+            <p id="loading1" class="loading" style="display: none">
+                    <span class="pic"></span>
+                </p>
+            <div id="month" class="echart t_btn7"  style="width:100%;height: 100%;">
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/dataTool.js"></script>
+<script src="../static/js/index.js"></script>
+<script>
+    function func1(){
+        var uid = window.parent.toChildValue();
+        console.log("获取到父页面传值：")
+        console.log(uid);
+         document.getElementById("loading").style.display = 'block';
+         document.getElementById("loading1").style.display = 'block';
+        $.ajax({
+                         type:"POST",
+                         url:"/search/",
+                         headers: {
+							'Content-Type': 'application/json'
+						},
+						data: JSON.stringify({'uid' : uid}),
+                        dataType:'json',
+						success: function (data) {
+                             console.log(data)
+                            console.log(data['d1'])
+                            console.log(data['m1'])
+                            //错误提醒 如果 没有 弹出 请输入正确的id号码，，内容检测
+							if (data['d1']) {
+								console.log(data['d1'][0])//0-99  100-107
+								edate(data['d1']);
+								emonth(data['m1']);
+								 document.getElementById("loading").style.display = 'none';
+								 document.getElementById("loading1").style.display = 'none';
+							} else {
+								alert("请输入正确的用户编号")
+							}
+						}
+                     })
+    }
+function edate(data) {
+        var chartDom = document.getElementById('chart_date');
+        console.log('edateok');
+        var myChart = echarts.init(chartDom);
+        var option;
+        const valueList = data;
+        const dateList = data.map(function (item, index) {
+             return index;
+        });
+        console.log(valueList)
+        option = {
+          visualMap: [
+            {
+              show: false,
+              type: 'continuous',
+              seriesIndex: 0,
+              min: 0,
+              max: 100
+            }
+          ],
+
+          tooltip: {
+            trigger: 'axis',
+              formatter: " {b}天用电量：</br>{c}"
+          },
+          xAxis: [
+            {name: '天',data: dateList,
+                axisLine:{
+		                        lineStyle:{
+		                            color:'#ffffff',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    }
+            }
+          ],
+          yAxis: [{
+              name: '用电量',
+              axisLine:{
+		                        lineStyle:{
+		                            color:'#ffffff',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    },
+              splitLine:{
+                  lineStyle:{
+                      type:'dashed',
+                  }
+              }
+          }],
+          grid: [
+            {
+              bottom: '30%'
+            },
+            {
+              top: '60%'
+            }
+          ],
+          series: [
+              {
+                  type: 'line',
+                  showSymbol: false,
+                  data: valueList,
+                  areaStyle: {
+                      normal: {
+                          color: {
+                              x: 0,
+                              y: 0,
+                              x2: 0,
+                              y2: 1,
+                              colorStops: [
+                                  {
+                                      offset: 0.1,
+                                      color: '#c55D34' // 0% 处的颜色
+                                  },
+                                  {
+                                      offset: 0.5,
+                                      color: 'rgba(255,185,91, 0.3)' // 0% 处的颜色
+                                  },
+                                  {
+                                      offset: 0.7,
+                                      color: 'rgba(255,185,91, 0.1)' // 0% 处的颜色
+                                  },
+                                  {
+                                      offset: 0.9,
+                                      color: 'rgba(0,0,0, 0.1)' // 100% 处的颜色
+                                  }
+                              ],
+                              globalCoord: false // 缺省为 false
+                          }
+                      }
+                  }
+              }
+          ]
+        };
+        option && myChart.setOption(option);
+    }
+
+function emonth(data) {
+        var chartDom = document.getElementById('month');
+        console.log('emonthok');
+        var myChart = echarts.init(chartDom);
+        var option;
+        const valueList = data;
+        const dateList = data.map(function (item, index) {
+             return index;
+        });
+console.log(valueList);
+        option = {
+          visualMap: [
+            {
+              show: false,
+              type: 'continuous',
+              seriesIndex: 0,
+              min: 0,
+              max: 50
+            }
+          ],
+
+          tooltip: {
+            trigger: 'axis',
+     formatter: " {b}月用电量：</br>{c}"
+          },
+          xAxis: [
+            {name: '月',data: dateList,
+                axisLine:{
+		                        lineStyle:{
+		                            color:'#d2ecf9',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    },
+                splitLine:{
+                  lineStyle:{
+                      type:'dashed',
+                  }
+              }
+            }
+          ],
+          yAxis: [{
+              name: '用电量',
+              axisLine:{
+		                        lineStyle:{
+		                            color:'#d2ecf9',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    },
+              splitLine:{
+                  lineStyle:{
+                      type:'dashed',
+                  }
+              }
+
+          }],
+
+          grid: [
+            {
+              bottom: '30%'
+            },
+            {
+              top: '60%'
+            }
+          ],
+          series: [
+            {
+              type: 'line',
+              showSymbol: false,
+              data: valueList,
+                areaStyle: {
+                      normal: {
+                          color: {
+                              x: 0,
+                              y: 0,
+                              x2: 0,
+                              y2: 1,
+                              colorStops: [
+                                  {
+                                      offset: 0.1,
+                                      color: '#DC143C' // 0% 处的颜色
+                                  },
+                                  {
+                                      offset: 0.5,
+                                      color: 'rgba(220,20,60, 0.3)' // 0% 处的颜色
+                                  },
+                                  {
+                                      offset: 0.7,
+                                      color: 'rgba(220,20,60, 0.1)' // 0% 处的颜色
+                                  },
+                                  {
+                                      offset: 0.9,
+                                      color: 'rgba(0,0,0, 0.1)' // 100% 处的颜色
+                                  }
+                              ],
+                              globalCoord: false // 缺省为 false
+                          }
+                      }
+                  }
+            }
+          ]
+        };
+        option && myChart.setOption(option);
+    }
+</script>
+</html>

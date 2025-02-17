@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电力客户分析系统</title>
+{#  <link href="../static/css/bootstrap.css" rel="stylesheet">#}
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/new1.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
+
+     <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
+    <script src="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.js"></script>
+
+<script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table-locale-all.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.20.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
+
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+
+        <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <style>
+    .t_title{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 2.5em;
+      line-height: 80px;
+      color: #fff;
+    }
+    #chart_map{
+      cursor: pointer;
+    }
+
+          .middle_top {
+						width: 100%;
+						height: 100%;
+					}
+						.middle_top_list {
+							float: left;
+							width: 50%;
+							height: 35%;
+							margin-top: 15.5%;
+							text-align: center;
+							color: #4ADEFE;
+						}
+							.middle_top_list span {
+								color: #F3DB5C;
+							}
+							.list_title {
+								font-size: 18px;
+								margin-top: -15%;
+							}
+							.list_num {
+								margin-top: 3%;
+								font-size: 16px;
+							}
+								.list_num span {
+									font-size: 30px;
+								}
+						.middle_top_list:nth-of-type(2) {
+							border-left: 1px solid #4E72B0;
+							{#border-right: 1px solid #4E72B0;#}
+						}
+
+
+.bootstrap-table .fixed-table-container .table thead th .both {
+     background-image: none
+}
+      .bootstrap-table .fixed-table-container.fixed-height .table thead th {
+    border-bottom: none;
+}
+      .bootstrap-table .fixed-table-container.fixed-height:not(.has-footer) {
+   border-bottom:none;
+}
+      .form-control {
+    color: #212529;
+    background-color: #0c1e31;
+    border: 1px solid #4165a2;
+}
+      .btn-secondary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+           right: 3px;
+}
+
+
+#main-nav {
+            margin-left: 1px;
+        }
+
+            #main-nav.nav-tabs.nav-stacked > li > a {
+                padding: 10px 8px;
+                font-size: 12px;
+                font-weight: 600;
+                color: #4A515B;
+                background: #E9E9E9;
+                background: -moz-linear-gradient(top, #FAFAFA 0%, #E9E9E9 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9));
+                background: -webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: -o-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: -ms-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9');
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9')";
+                border: 1px solid #D5D5D5;
+                border-radius: 4px;
+            }
+
+                #main-nav.nav-tabs.nav-stacked > li > a > span {
+                    color: #4A515B;
+                }
+
+                #main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover {
+                    color: #FFF;
+                    background: #10223f;
+                   {#background: -moz-linear-gradient(top, #4A515B 0%, #0c1b32 100%);#}
+                    {#background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4A515B), color-stop(100%,#3C4049));#}
+                    {#background: -webkit-linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#background: -o-linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#background: -ms-linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#background: linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049');*/#}
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049')";
+                    border-color: #2B2E33;
+                }
+
+                    #main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover > span {
+                        color: #FFF;
+                    }
+
+            #main-nav.nav-tabs.nav-stacked > li {
+                margin-bottom: 4px;
+            }
+
+        /*定义二级菜单样式*/
+        .secondmenu a {
+            font-size: 10px;
+            color: #4A515B;
+            text-align: center;
+        }
+
+        .navbar-static-top {
+            background-color: #212121;
+            margin-bottom: 5px;
+        }
+
+        .navbar-brand {
+            background: url() no-repeat 10px 8px;
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 50px;
+            color: #fff;
+        }
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="bg_header">
+    <div class="header_nav fl t_title">
+     用户用电特征相关性分析
+    </div>
+  </div>
+</div>
+<div class="row">
+       <div class="col-md-1">
+            <ul id="main-nav" class="nav nav-tabs nav-stacked" style="width: 100%">
+                <li style=" margin-top: 70%; width: 100%">
+                <a  onclick="window.open('/','_self')">
+                    <i class="glyphicon glyphicon-th-large"></i>
+                    首页
+                </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/onew','_self')" >
+                        <i class="glyphicon glyphicon-credit-card"></i>
+用户用电量数据查询
+                    </a>
+                </li>
+                <li class="active" style=" width: 100%">
+                    <a onclick="window.open('/relax','_self')" >
+                        <i class="glyphicon glyphicon-globe"></i>
+                        用户用电特征相关性分析
+
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/kmeanspage','_self')" >
+                        <i class="glyphicon glyphicon-globe"></i>
+                        聚类分析
+
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/WKpage','_self')" >
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        "挖矿"预测
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/nextMonth','_self')" >
+                        <i class="glyphicon glyphicon-fire"></i>
+                        用户预测
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <div class="col-md-11">
+
+
+<!--header-->
+
+<!--main-->
+<div class="data_content">
+    <div class="data_left"></div>
+
+
+    <div class="data_right">
+
+
+
+  <div class="data_main">
+
+  <div class="data_bottom">
+
+    <div class="bottom_center fl">
+<!--        <div class="bottom_1 fl" style="height:530px;width:680px;top:132px">-->
+        <div class="bottom_1 fl" style="height:500px;width:50%;top:10%; left: 1%">
+                <!--左上边框-->
+                <div class="t_line_box">
+                  <i class="t_l_line"></i>
+                  <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                  <i class="t_r_line"></i>
+                  <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                  <i class="l_b_line"></i>
+                  <i class="b_l_line"></i>
+                </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                  <i class="r_b_line"></i>
+                  <i class="b_r_line"></i>
+                </div>
+
+ <div class="main_title2" style="left:46%;">
+
+                    elec_type_name和volt_name关系堆叠柱状图
+                </div>
+   <div id="chart_overlap" class="chart" style="width:100%;height: 350px;"></div>
+            <div class="content_page">
+                 <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp图表说明：此图是elec_type_name和volt_name关系的堆叠柱状图。 横轴表示elec_type_name类型（1~10）
+   纵轴表示对应volt_name（3种）所占百分比。
+                </p>
+                <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp分析总结：此图分析可以看出，在不同的用电类型下（例如居民用电、大工业用电等），
+   volt_name所表示的电压等级不存在规律分布。可以确定的是在用电类型为0，2，3，6，9，10时，
+   常用的电压等级为220V，在用电类型10下，使用的电压全为220V。在用电类型为1，4，5，7，8时，
+   较为常使用10000V电压，在类型4和类型8下，采集到的用户全部使用10000V电压。
+                </p>
+            </div>
+
+        </div>
+
+
+
+        <div class="bottom_1 fl" style="height:550px;width:50%;top:100%;left:1%;">
+                <!--左上边框-->
+                <div class="t_line_box">
+                    <i class="t_l_line"></i>
+                    <i class="l_t_line"></i>
+                </div>
+                <!--右上边框-->
+                <div class="t_line_box">
+                    <i class="t_r_line"></i>
+                    <i class="r_t_line"></i>
+                </div>
+                <!--左下边框-->
+                <div class="t_line_box">
+                    <i class="l_b_line"></i>
+                    <i class="b_l_line"></i>
+                </div>
+                    <!--右下边框-->
+                    <div class="t_line_box">
+                    <i class="r_b_line"></i>
+                    <i class="b_r_line"></i>
+                </div>
+               <div class="main_title2" style="left:46%;">
+                   &nbsp;&nbsp;&nbsp;volt_name 和 prc_name 关系堆叠条形图
+                </div>
+            <div id="chart_dui" class="chart" style="width:100%;height: 400px;"></div>
+             <div class="content_page">
+                <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp图表说明：此图是'volt_name', 'prc_name'关系的堆叠条形图。 横轴表示prc_name类型（1~3）
+   数轴表示对应volt_name（3种）所占百分比.
+                </p>
+                 <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp分析总结：从此图上上可以进一步看出,volt_name所表示的电压等级名称和prc_name所表示的电价
+   名称具有高度的相关性。在电价名称为1和2类型时，全部都是10000V电压，在电价类型为0时，75%左右是使用
+   220V电压，其余为380V电压，不存在10000V电压。
+                </p>
+            </div>
+        </div>
+
+
+        <div class="bottom_1 fl" style="height:500px;width:45%;top:10%;right:2%;">
+            <!--左上边框-->
+            <div class="t_line_box">
+                <i class="t_l_line"></i>
+                <i class="l_t_line"></i>
+            </div>
+            <!--右上边框-->
+            <div class="t_line_box">
+                <i class="t_r_line"></i>
+                <i class="r_t_line"></i>
+            </div>
+            <!--左下边框-->
+            <div class="t_line_box">
+                <i class="l_b_line"></i>
+                <i class="b_l_line"></i>
+            </div>
+                <!--右下边框-->
+                <div class="t_line_box">
+                <i class="r_b_line"></i>
+                <i class="b_r_line"></i>
+            </div>
+ <div class="main_title">
+                    &nbsp;&nbsp;四 属 性 热 力 图
+                </div>
+            <div id="chart_heat" class="chart" style="width:100%;height: 350px;"></div>
+             <div class="content_page">
+                <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp图表说明：此图是elec_type_name, volt_name, prc_name, contract_cap的热力图，数值表示相关性大小。
+                </p>
+             <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp分析总结：从此图上来看， prc_name和volt_name两个属性之间的相关性很强，达到了94%,
+   其次是volt_name和contract_cap之间的相关性，为45%。而其他属性之间的相关性都比较低。
+   elec_type_name和volt_name之间的相关性是3%.表示两者基本上不存在线性关系。
+   elec_type_name和contract_cap之间更是呈现出了负相关。
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="bottom_1 fl" style="height:550px;top:100%;width:45%;right:2%;">
+              <!--左上边框-->
+              <div class="t_line_box">
+                <i class="t_l_line"></i>
+                <i class="l_t_line"></i>
+              </div>
+              <!--右上边框-->
+              <div class="t_line_box">
+                <i class="t_r_line"></i>
+                <i class="r_t_line"></i>
+              </div>
+              <!--左下边框-->
+              <div class="t_line_box">
+                <i class="l_b_line"></i>
+                <i class="b_l_line"></i>
+              </div>
+              <!--右下边框-->
+              <div class="t_line_box">
+                <i class="r_b_line"></i>
+                <i class="b_r_line"></i>
+              </div>
+            <div class="main_title">
+              用户类型占比情况
+            </div>
+            <div id="chart_zhe" class="chart" style="width:100%;height: 350px;"></div>
+             <div class="content_page">
+                <p style="color: orange; padding-left:20px;padding-right:20px;padding-top: 30px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp图表说明：此图是是contract_cap、volt_name关系的折线图。横轴是随机抽取了20个样本，纵轴是contract_cap值。
+                </p>
+                 <p style="color: orange; padding-left:20px;padding-right:20px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp分析总结：从此图可以进一步看出，volt_name所表示的电压等级名称和contract_cap合同容量
+   之间的相关性较低。从使用不同电压等级的用户中分别采集到的20个样本，在这20个样本中，10000V的用户
+   所签署的合同容量都非常低，220V的用户签署的合同容量也基本少于100，380V的用户签署的合同容量则起伏较大，
+   基本呈现锯齿状。
+                </p>
+            </div>
+
+        </div>
+
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+
+
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/dataTool.js"></script>
+<script src="../static/js/index4.js"></script>
+<script>
+
+</script>
+</html>

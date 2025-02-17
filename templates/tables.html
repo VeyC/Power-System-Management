@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电力客户分析系统</title>
+  <link href="../static/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/new.css">
+
+
+  <style>
+    .t_title{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 2.5em;
+      line-height: 80px;
+      color: #fff;
+    }
+    #chart_map{
+      cursor: pointer;
+    }
+    .t_show{
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-radius: 2px;
+      background: #2C58A6;
+      padding: 2px 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+      .middle_top {
+						width: 100%;
+						height: 100%;
+					}
+						.middle_top_list {
+							float: left;
+							width: 50%;
+							height: 35%;
+							margin-top: 15.5%;
+							text-align: center;
+							color: #4ADEFE;
+						}
+							.middle_top_list span {
+								color: #F3DB5C;
+							}
+							.list_title {
+								font-size: 18px;
+								margin-top: -15%;
+							}
+							.list_num {
+								margin-top: 3%;
+								font-size: 16px;
+							}
+								.list_num span {
+									font-size: 30px;
+								}
+						.middle_top_list:nth-of-type(2) {
+							border-left: 1px solid #4E72B0;
+							{#border-right: 1px solid #4E72B0;#}
+						}
+
+
+
+
+  </style>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+  <div class="bg_header">
+    <div class="header_nav fl t_title">
+      电力客户分析系统
+    </div>
+  </div>
+</div>
+<!--main-->
+<div class="data_content">
+
+  <div class="data_main">
+
+  <div class="data_bottom">
+
+    <div class="bottom_center fl">
+<div class="bottom_3 fl" style="height: 490px; ">
+        <!--左上边框-->
+        <div class="t_line_box">
+          <i class="t_l_line"></i>
+          <i class="l_t_line"></i>
+        </div>
+        <!--右上边框-->
+        <div class="t_line_box">
+          <i class="t_r_line"></i>
+          <i class="r_t_line"></i>
+        </div>
+        <!--左下边框-->
+        <div class="t_line_box">
+          <i class="l_b_line"></i>
+          <i class="b_l_line"></i>
+        </div>
+        <!--右下边框-->
+        <div class="t_line_box">
+          <i class="r_b_line"></i>
+          <i class="b_r_line"></i>
+        </div>
+        <div class="main_title">
+          <img src="../static/img/t_7.png" alt="">
+         用 户 类 别 评 估
+        </div>
+        <div class="main_table t_btn8" style="height: 450px; overflow-y:auto">
+          <table
+                id="table"
+  data-toolbar="#toolbar"
+  data-search="true"
+  data-show-refresh="true"
+  data-show-toggle="true"
+  data-show-fullscreen="true"
+  data-show-columns="true"
+  data-show-columns-toggle-all="true"
+  data-show-export="true"
+  data-click-to-select="true"
+  data-detail-formatter="detailFormatter"
+  data-minimum-count-columns="2"
+  data-show-pagination-switch="true"
+  data-pagination="true"
+  data-id-field="id"
+  data-page-list="[10, 25, 50, 100, all]"
+  data-show-footer="true"
+  data-locale="zh-Hans"
+  data-response-handler="responseHandler">
+            <thead>
+            <tr>
+              <th>用户编号</th>
+              <th>平均缴费金额</th>
+              <th>平均缴费次数</th>
+              <th>类型评估</th>
+            </tr>
+            </thead>
+            <tbody>
+            {%  for x in thisall %}
+            <tr>
+              <td>{{ x.0 }}</td>
+                <td>{{ x.2 }}</td>
+            <td>{{ x.1 }}</td>
+            <td>{{ x.3 }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+<div class="bottom_1 fr" style="height:140px;top:52px;">
+        <div class="middle_top">
+          <div class="middle_top_list">
+            <div class="list_title">平均缴费金额</div>
+            <div class="list_num list_num1"><span class="counter-value">2515.7</span>元</div>
+          </div>
+          <div class="middle_top_list">
+              <div class="list_title">平均缴费次数</div>
+              <div class="list_num list_num2"><span class="counter-value">11</span>次</div>
+          </div>
+        </div>
+      </div>
+        <div class="bottom_1 fr" style="top:100px;">
+      <!--左上边框-->
+      <div class="t_line_box">
+        <i class="t_l_line"></i>
+        <i class="l_t_line"></i>
+      </div>
+      <!--右上边框-->
+      <div class="t_line_box">
+        <i class="t_r_line"></i>
+        <i class="r_t_line"></i>
+      </div>
+      <!--左下边框-->
+      <div class="t_line_box">
+        <i class="l_b_line"></i>
+        <i class="b_l_line"></i>
+      </div>
+      <!--右下边框-->
+      <div class="t_line_box">
+        <i class="r_b_line"></i>
+        <i class="b_r_line"></i>
+      </div>
+
+      <div class="main_title">
+        <img src="../static/img/t_7.png" alt="">
+        高价值客户TOP5
+      </div>
+
+      <div class="main_table t_btn3" style="height: 260px; overflow-y:auto">
+        <table>
+          <thead>
+          <tr>
+            <th>排名</th>
+            <th>客户编号</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>NO.1</td>
+            <td>019716</td>
+          </tr>
+          <tr>
+            <td>NO.2</td>
+            <td>011309</td>
+
+          </tr>
+          <tr>
+            <td>NO.3</td>
+            <td>012163</td>
+
+          </tr>
+          <tr>
+            <td>NO.4</td>
+            <td>007730</td>
+
+          </tr>
+          <tr>
+            <td>NO.5</td>
+            <td>004120</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+</body>
+<script src="../static/js/jquery-2.2.1.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/common.js"></script>
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/dataTool.js"></script>
+<script src="../static/js/index.js"></script>
+<script src="../static/js/china.js"></script>
+<script src="../static/js/hunan.js"></script>
+</html>

@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电力客户分析系统</title>
+  <link href="../static/css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/new1.css">
+  <script src="../static/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
+
+<link rel="stylesheet" type="text/css" href="https://blog.huangwx.cn/css/sweetalert.css">
+    <script type="text/javascript" src="https://blog.huangwx.cn/js/sweetalert-dev.js"></script>
+
+            <link href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <style>
+    .t_title{
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      font-size: 2.5em;
+      line-height: 80px;
+      color: #fff;
+    }
+     .middle_top {
+						width: 100%;
+						height: 100%;
+					}
+						.middle_top_list {
+							float: left;
+							width: 50%;
+							height: 35%;
+							margin-top: 15.5%;
+							text-align: center;
+							color: #4ADEFE;
+						}
+							.middle_top_list span {
+								color: #F3DB5C;
+							}
+							.list_title {
+								font-size: 18px;
+								margin-top: -15%;
+							}
+							.list_num {
+								margin-top: 3%;
+								font-size: 16px;
+							}
+								.list_num span {
+									font-size: 30px;
+								}
+						.middle_top_list:nth-of-type(2) {
+							border-left: 1px solid #4E72B0;
+							{#border-right: 1px solid #4E72B0;#}
+						}
+
+
+.bootstrap-table .fixed-table-container .table thead th .both {
+     background-image: none
+}
+      .bootstrap-table .fixed-table-container.fixed-height .table thead th {
+    border-bottom: none;
+}
+      .bootstrap-table .fixed-table-container.fixed-height:not(.has-footer) {
+   border-bottom:none;
+}
+      .form-control {
+    color: #212529;
+    background-color: #0c1e31;
+    border: 1px solid #4165a2;
+}
+      .btn-secondary {
+    color: #fff;
+    background-color: transparent;
+    border-color: transparent;
+           right: 3px;
+}
+      .app-serach-box {
+     position: relative;
+    max-width: 600px;
+    margin: 3vh auto 20px;
+}
+          .se-input-box{
+    box-shadow: 0 0 10px 3px #00000029;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(14px);
+    overflow: hidden;
+    display: flex;
+    border-radius: 25px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.7);
+    align-items: center;
+    transition: .2s;
+    color: #222;
+}
+.se-input-box .se-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 50px;
+    max-width: 50px;
+    transition: .2s;
+    }
+.icon{
+    vertical-align: middle;
+}
+
+.app-serach-box .se-input-box .se-input{
+    color: #222;
+    background-color: transparent;
+    font-size: 14px;
+    height: 100%;
+    width: 100%;
+    line-height: 20px;
+        padding: 8px 50px;
+}
+#loading {
+            margin: auto;
+            margin-top: 10px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            /*border: 1px solid black;*/
+        }
+
+            #loading .pic {
+                display: block;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                box-shadow: 0 2px 0 #fbfcd0;
+                animation: loop 1s infinite;
+                -webkit-animation: loop 1s infinite;
+            }
+
+        @keyframes loop {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg );
+            }
+        }
+
+#main-nav {
+            margin-left: 1px;
+        }
+
+            #main-nav.nav-tabs.nav-stacked > li > a {
+                padding: 10px 8px;
+                font-size: 12px;
+                font-weight: 600;
+                color: #4A515B;
+                background: #E9E9E9;
+                background: -moz-linear-gradient(top, #FAFAFA 0%, #E9E9E9 100%);
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FAFAFA), color-stop(100%,#E9E9E9));
+                background: -webkit-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: -o-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: -ms-linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                background: linear-gradient(top, #FAFAFA 0%,#E9E9E9 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9');
+                -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#E9E9E9')";
+                border: 1px solid #D5D5D5;
+                border-radius: 4px;
+            }
+
+                #main-nav.nav-tabs.nav-stacked > li > a > span {
+                    color: #4A515B;
+                }
+
+                #main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover {
+                    color: #FFF;
+                    background: #10223f;
+                   {#background: -moz-linear-gradient(top, #4A515B 0%, #0c1b32 100%);#}
+                    {#background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4A515B), color-stop(100%,#3C4049));#}
+                    {#background: -webkit-linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#background: -o-linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#background: -ms-linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#background: linear-gradient(top, #4A515B 0%,#3C4049 100%);*/#}
+                    {#filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049');*/#}
+                    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A515B', endColorstr='#3C4049')";
+                    border-color: #2B2E33;
+                }
+
+                    #main-nav.nav-tabs.nav-stacked > li.active > a, #main-nav.nav-tabs.nav-stacked > li > a:hover > span {
+                        color: #FFF;
+                    }
+
+            #main-nav.nav-tabs.nav-stacked > li {
+                margin-bottom: 4px;
+            }
+
+
+        /*定义二级菜单样式*/
+        .secondmenu a {
+            font-size: 10px;
+            color: #4A515B;
+            text-align: center;
+        }
+
+        .navbar-static-top {
+            background-color: #212121;
+            margin-bottom: 5px;
+        }
+
+        .navbar-brand {
+            background: url() no-repeat 10px 8px;
+            display: inline-block;
+            vertical-align: middle;
+            padding-left: 50px;
+            color: #fff;
+        }
+  </style>
+
+</head>
+
+<body>
+<!--header-->
+<div class="header">
+  <div class="bg_header">
+    <div class="header_nav fl t_title">
+用 户 用 电 量 数 据 查 询
+    </div>
+  </div>
+</div>
+<div class="row">
+ <div class="col-md-1">
+            <ul id="main-nav" class="nav nav-tabs nav-stacked" style="width: 100%">
+                <li style=" margin-top: 70%; width: 100%">
+                <a  onclick="window.open('/','_self')">
+                    <i class="glyphicon glyphicon-th-large"></i>
+                    首页
+                </a>
+                </li>
+                <li class="active" style=" width: 100%">
+                    <a onclick="window.open('/onew','_self')" >
+                        <i class="glyphicon glyphicon-credit-card"></i>
+用户用电量数据查询
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/relax','_self')" >
+                        <i class="glyphicon glyphicon-globe"></i>
+                        用户用电特征相关性分析
+
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/kmeanspage','_self')" >
+                        <i class="glyphicon glyphicon-globe"></i>
+                        聚类分析
+
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/WKpage','_self')" >
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        "挖矿"预测
+                    </a>
+                </li>
+                <li style=" width: 100%">
+                    <a onclick="window.open('/nextMonth','_self')" >
+                        <i class="glyphicon glyphicon-fire"></i>
+                        用户预测
+                    </a>
+                </li>
+            </ul>
+        </div>
+    <div class="col-md-11">
+<!--main-->
+    <div class="data_content">
+
+      <div class="data_main" >
+          <div class="data_bottom" style="height: 100%">
+              <span style="cursor:pointer">
+                  <div class="app-serach-box">
+                    <div class="se-input-box">
+                             <input autofocus="" name="uid" id="uid" class="se-input" maxlength="63" placeholder="输入用户编号（1700001-1722217）" autofocus="autofocus" onblur="idBlur()" type="text"  />
+
+                        <div class="se-select btn btn-secondary" data-v-60c2c30c="" id="btn" onclick="okk()")>
+                            <svg t="1652507557970" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3236" width="20" height="20"><path d="M945.066667 898.133333l-189.866667-189.866666c55.466667-64 87.466667-149.333333 87.466667-241.066667 0-204.8-168.533333-373.333333-373.333334-373.333333S96 264.533333 96 469.333333 264.533333 842.666667 469.333333 842.666667c91.733333 0 174.933333-34.133333 241.066667-87.466667l189.866667 189.866667c6.4 6.4 14.933333 8.533333 23.466666 8.533333s17.066667-2.133333 23.466667-8.533333c8.533333-12.8 8.533333-34.133333-2.133333-46.933334zM469.333333 778.666667C298.666667 778.666667 160 640 160 469.333333S298.666667 160 469.333333 160 778.666667 298.666667 778.666667 469.333333 640 778.666667 469.333333 778.666667z" p-id="3237" fill="#1296db"></path></svg>
+                        </div>
+
+                    </div>
+ <span id="nameReg"></span>
+
+
+                </div>
+              </span>
+
+
+            <div class="bottom_center fl" style="height: 100%">
+
+
+                <iframe id="1" src="" width="100%" height="100%"  frameborder="no"></iframe>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+</div>
+</body>
+
+<script src="../static/js/echarts.min.js"></script>
+<script src="../static/js/dataTool.js"></script>
+<script src="../static/js/index.js"></script>
+
+<script>
+var show = document.getElementById("nameReg"); //获取存放"√"和"×"文本的span标签ID
+show.innerText = "用户编号[1700001-1722217]";
+show.style.color = "white"; //设置"×"文本颜色为红色
+                    show.style.padding = "30px";
+    //表单提交,会把所有有name属性的值提交到后台
+     function getText(inputId, reg) {
+				var text = document.getElementById(inputId).value; //获取输入框的ID 存放到text变量中
+				var verify = reg; //获取正则表达式 存放到verify变量中
+				var result = verify.test(text.trim()); //判断输入框内容是否符合 正则表达式
+				var show = document.getElementById("nameReg"); //获取存放"√"和"×"文本的span标签ID
+				//如果符合正则表达式，则在输入框后面打"√"；否则打"×"
+				if(result && text != "") {
+
+                    if(text<1700001||text>1722217){
+                        show.innerText="用户编号范围为1700001-1722217";
+                        show.style.color = "white";
+                        show.style.padding = "30px";
+                    } else{
+                        show.innerText = "";
+                        show.style.color = "white"; //设置"√"文本颜色为绿色
+                        show.style.padding = "30px";
+                    }
+				} else {
+					show.innerText = "请输入数字用户编号[1700001-1722217]";
+					show.style.color = "white"; //设置"×"文本颜色为红色
+                    show.style.padding = "30px";
+				}
+
+			}
+    function idBlur() {
+				//调用getText（inputId,reg）方法
+				getText("uid", /[1-9]\d*/);
+			}
+
+
+
+
+    function toChildValue(){
+                var txt = $('#uid').val();
+                return txt;
+            }
+
+
+
+    function okk() {
+
+        var ifok = document.getElementById("nameReg").innerText;
+        if(ifok!=""){
+            swal({
+        	  title:"",
+        	  text:"请按提示填写用户编号",
+        	  type:"warning",
+        	  confirmButtonText:"确定",
+        	  animation:"slide-from-top"
+        	})
+            return;
+        }
+        var iframe=document.getElementById("1");
+        console.log()
+        var uid = $('#uid').val();
+        toChildValue();
+              console.log(uid);
+
+
+
+             iframe.src="{% url 't7inner' %}";
+
+
+
+
+
+          }
+
+    function edate(data) {
+        var chartDom = document.getElementById('chart_date');
+        console.log('ok');
+        var myChart = echarts.init(chartDom);
+        var option;
+        const valueList = data;
+        const dateList = data.map(function (item, index) {
+             return index;
+        });
+        console.log(valueList)
+        option = {
+          visualMap: [
+            {
+              show: false,
+              type: 'continuous',
+              seriesIndex: 0,
+              min: 0,
+              max: 100
+            }
+          ],
+          title: [
+            {
+              left: 'center',
+              text: 'Gradient along the y axis'
+            }
+          ],
+          tooltip: {
+            trigger: 'axis'
+          },
+          xAxis: [
+            {name: '天',data: dateList,
+                axisLine:{
+		                        lineStyle:{
+		                            color:'#ffffff',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    }
+            }
+          ],
+          yAxis: [{
+              name: '用电量',
+              axisLine:{
+		                        lineStyle:{
+		                            color:'#ffffff',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    }}],
+          grid: [
+            {
+              bottom: '30%'
+            },
+            {
+              top: '60%'
+            }
+          ],
+          series: [
+            {
+              type: 'line',
+              showSymbol: false,
+              data: valueList
+            }
+          ]
+        };
+        option && myChart.setOption(option);
+    }
+
+function emonth(data) {
+        var chartDom = document.getElementById('month');
+        console.log('ok');
+        var myChart = echarts.init(chartDom);
+        var option;
+const valueList = data;
+const dateList = data.map(function (item, index) {
+  return index;
+});
+console.log(valueList)
+        option = {
+          visualMap: [
+            {
+              show: false,
+              type: 'continuous',
+              seriesIndex: 0,
+              min: 0,
+              max: 50
+            }
+          ],
+          title: [
+            {
+              left: 'center',
+              text: 'Gradient along the y axis'
+            }
+          ],
+          tooltip: {
+            trigger: 'axis'
+          },
+          xAxis: [
+            {name: '月',data: dateList,
+                axisLine:{
+		                        lineStyle:{
+		                            color:'#ffffff',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    }
+            }
+          ],
+          yAxis: [{
+              name: '用电量',
+              axisLine:{
+		                        lineStyle:{
+		                            color:'#ffffff',
+		                            width:1,//这里是为了突出显示加上的
+		                        }
+		                    }}],
+          grid: [
+            {
+              bottom: '30%'
+            },
+            {
+              top: '60%'
+            }
+          ],
+          series: [
+            {
+              type: 'line',
+              showSymbol: false,
+              data: valueList
+            }
+          ]
+        };
+        option && myChart.setOption(option);
+    }
+</script>
+</html>
