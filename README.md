@@ -1,0 +1,1 @@
+This is the power system management competition topic of the 2022 China Software Cup, and this work won the third prize. This includes the backend implemented using Python Flask and the frontend implemented using Vue.
